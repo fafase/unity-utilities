@@ -57,18 +57,18 @@ public class StateMachine : MonoBehaviour {
         debugTransitions = debug;
     }
 
-    protected bool IsLegalTransition(string fromstate, string tostate) {
-        if (states.ContainsKey(fromstate) && states.ContainsKey(tostate)) {
-            if (states[fromstate].allowAnyTransition || states[fromstate].transitions.Contains(tostate)) {
+    protected bool IsLegalTransition(string sourceState, string nextState) {
+        if (states.ContainsKey(sourceState) && states.ContainsKey(nextState)) {
+            if (states[sourceState].allowAnyTransition || states[sourceState].transitions.Contains(nextState)) {
                 return true;
             }
         }
         return false;
     }
     
-    private void TransitionTo(string newstate) {
+    private void TransitionTo(string nextState) {
         transitionSource = currentState;
-        transitionTarget = states[newstate];
+        transitionTarget = states[nextState];
         inTransition = true;
 
         currentState.exitMethod(transitionTarget.name);
