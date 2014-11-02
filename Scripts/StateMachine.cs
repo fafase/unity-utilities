@@ -37,7 +37,7 @@ public class StateMachine : MonoBehaviour {
         get { return currentState.name; }
     }
 
-    protected void InitializeStateMachine( bool debug ) {
+    protected void Initialize( bool debug ) {
         if (initialized) {
             Debug.LogWarning( GetType().ToString() + " is trying to initialize statefulness multiple times." );
             return;
@@ -122,7 +122,7 @@ public class StateMachine : MonoBehaviour {
         return true;
     }
 
-    protected void AddState(string newstate) 
+    protected void DeclareState(string newstate) 
     {
         State s = new State( newstate );
         System.Type ourType = this.GetType(); 
@@ -146,7 +146,7 @@ public class StateMachine : MonoBehaviour {
         this.states.Add( newstate, s );
     }
 
-    protected void AddStateWithTransitions(string newstate, string[] transitions) 
+    protected void DeclareStateWithTransitions(string newstate, string[] transitions) 
     {
         AddState(newstate);
         State s = states[newstate];
