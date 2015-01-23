@@ -26,6 +26,8 @@ public class StateMachine : MonoBehaviour {
     private Dictionary<string, State> states;
 
     private State currentState = null;
+    private State transitionSource = null;
+    private State transitionTarget = null;
     private bool inTransition = false;
     
     private bool initialized = false;
@@ -37,7 +39,7 @@ public class StateMachine : MonoBehaviour {
         get { return currentState.name; }
     }
 
-    protected void Initialize( bool debug ) {
+    protected void InitializeStateMachine( bool debug ) {
         if (initialized) {
             Debug.LogWarning( GetType().ToString() + " is trying to initialize statefulness multiple times." );
             return;
@@ -57,18 +59,18 @@ public class StateMachine : MonoBehaviour {
         debugTransitions = debug;
     }
 
-    protected bool IsLegalTransition(string sourceState, string nextState) {
-        if (states.ContainsKey(sourceState) && states.ContainsKey(nextState)) {
-            if (states[sourceState].allowAnyTransition || states[sourceState].transitions.Contains(nextState)) {
+    protected bool IsLegalTransition(string fromstate, string tostate) {
+        if (states.ContainsKey(fromstate) && states.ContainsKey(tostate)) {
+            if (states[fromstate].allowAnyTransition || states[fromstate].transitions.Contains(tostate)) {
                 return true;
             }
         }
         return false;
     }
     
-    private void TransitionTo(string nextState) {
+    private void TransitionTo(string newstate) {
         transitionSource = currentState;
-        transitionTarget = states[nextState];
+        transitionTarget = states[newstate];
         inTransition = true;
 
         currentState.exitMethod(transitionTarget.name);
@@ -122,7 +124,7 @@ public class StateMachine : MonoBehaviour {
         return true;
     }
 
-    protected void DeclareState(string newstate) 
+    protected void AddState(string newstate) 
     {
         State s = new State( newstate );
         System.Type ourType = this.GetType(); 
@@ -146,7 +148,7 @@ public class StateMachine : MonoBehaviour {
         this.states.Add( newstate, s );
     }
 
-    protected void DeclareStateWithTransitions(string newstate, string[] transitions) 
+    protected void AddStateWithTransitions(string newstate, string[] transitions) 
     {
         AddState(newstate);
         State s = states[newstate];
