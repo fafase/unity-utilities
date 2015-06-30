@@ -17,7 +17,7 @@ using System.Collections.Generic;
 /// 
 /// void Shoot()
 /// {
-/// 	GameObject bullet = ObjectPool.Instance.PopFromPool(bulletPrefab);
+/// 	var obj = ObjectPool.Instance.PopFromPool("prefB", false, true, this.transform);
 /// }
 /// 
 /// void Hit(GameObject bullet)
@@ -27,7 +27,8 @@ using System.Collections.Generic;
 /// </summary>
 public sealed class ObjectPool
 {
-	private Dictionary <GameObject, List<GameObject>> container = new Dictionary<GameObject, List<GameObject>>();
+	private Dictionary <string, Queue<GameObject>> container = new Dictionary<string, Queue<GameObject>>();
+    private Dictionary<string, GameObject> prefabContainer = new Dictionary<string, GameObject>();
 
 	private static ObjectPool instance = null;
 	public static ObjectPool Instance {
@@ -42,18 +43,21 @@ public sealed class ObjectPool
 	}
 
     public void Reset() {
+        ReleasePool();
+        container.Clear();
+        container = null;
         instance = null;
     }
 
 	private ObjectPool() {}    
 
-	private List<GameObject> FindInContainer(ref GameObject prefab)
+	private Queue<GameObject> FindInContainer(string prefabName)
 	{
-		if(container.ContainsKey(prefab) == false)
+		if(container.ContainsKey(prefabName) == false)
 		{
-			container.Add(prefab, new List<GameObject>());
+			container.Add(prefabName, new Queue<GameObject>());
 		}
-		return container[prefab];
+		return container[prefabName];
 	}
 	
 	public void AddToPool(GameObject prefab, int count, Transform parent = null)
@@ -62,73 +66,120 @@ public sealed class ObjectPool
 		{
 			return;
 		}
+        string name = prefab.name;
+        if (prefabContainer.ContainsKey(name) == false) 
+        {
+            prefabContainer.Add(name, prefab);
+        }
+        if (prefabContainer[name] == null) 
+        {
+            prefabContainer[name] = prefab;
+        }
 		for (int i = 0; i < count ; i++)
 		{
-			GameObject obj = PopFromPool(prefab, true);
-			PushToPool(ref prefab,ref obj, parent);
+			GameObject obj = PopFromPool(name, true);
+            PushToPool(ref obj, true, parent);
 		}
 	}
-
+    public GameObject PopFromPool(string prefabName, bool forceInstantiate = false, bool instantiateIfNone = false, Transform container = null) 
+    {
+        if (prefabName == null) { return null; }
+        if (prefabContainer.ContainsKey(prefabName) == false) { return null; }
+        Debug.Log(container);
+        GameObject obj = null;
+        if (forceInstantiate == true)
+        {
+            return CreateObject(prefabName, container); ;
+        }
+        Queue<GameObject> queue = FindInContainer(prefabName);
+        if (queue.Count > 0)
+        {
+            obj = queue.Dequeue();
+            obj.transform.parent = container;
+            obj.SetActive(true);
+        }
+        if (obj == null && instantiateIfNone == true)
+        {
+            return CreateObject(prefabName, container);
+        }
+        return obj;
+    }
+    private GameObject CreateObject(string prefabName, Transform container)
+    {
+        GameObject obj = (GameObject)Object.Instantiate(prefabContainer[prefabName]);
+        obj.name = prefabName;
+        obj.transform.parent = container;
+        return obj;
+    }
 	public GameObject PopFromPool(GameObject prefab, bool forceInstantiate = false)
 	{
 		if(prefab == null)
 		{
 			return null;
-		} 
-		GameObject o = null;
-		if( forceInstantiate == true)
-		{
-			o = (GameObject)Object.Instantiate(prefab);
-			return o;
 		}
-		List<GameObject> list = FindInContainer(ref prefab);
-		if(list.Count > 0)
-		{
-			o = list[0];
-			list.RemoveAt(0);
-			o.SetActive(true);
-		}
-		return o;
+        return PopFromPool(prefab.name, forceInstantiate);
 	}
 
-	public void PushToPool(ref GameObject prefab, ref GameObject obj, Transform parent = null)
+	public void PushToPool( ref GameObject obj, bool retainObject = true, Transform parent = null)
 	{
-		if(prefab == null||obj == null)
+		if(obj == null)
 		{
 			return;
 		}
+        if(retainObject == false)
+        {
+            Object.Destroy(obj);
+            obj = null;
+            return;
+        }
 		if(parent != null)
 		{
 			obj.transform.parent = parent;
 		}
-		List<GameObject> list = FindInContainer(ref prefab);
-		list.Add (obj);
+		Queue<GameObject> queue = FindInContainer(obj.name);
+        queue.Enqueue(obj);
 		obj.SetActive(false);
+        obj = null;
 	}
 
-	public void ReleaseItems(ref GameObject prefab, ref GameObject obj)
+	public void ReleaseItems(GameObject prefab, bool destroyObject = false)
 	{
-		if(prefab == null || obj == null)
+		if( prefab == null)
 		{
+            Debug.Log("null prefab");
 			return;
 		}
-		var list = FindInContainer(ref prefab);
-		int index = list.IndexOf(obj);
-		list.RemoveAt (index);
-		Object.Destroy(obj);
+        Debug.Log(prefab.name);
+		Queue<GameObject> queue = FindInContainer(prefab.name);
+        if (queue == null) 
+        {
+            return;
+        }
+        while (queue.Count > 0) 
+        {
+            GameObject obj = queue.Dequeue();
+            if (destroyObject == true)
+            {
+                Object.Destroy(obj);
+            }
+        }
 	}
 
 	public void ReleasePool()
 	{
 		foreach (var kvp in container)
 		{
-			var list = kvp.Value;
-			foreach(var obj in list)
+			Queue<GameObject> queue = kvp.Value;
+			while(queue.Count > 0)
 			{
+                GameObject obj = queue.Dequeue();
 				Object.Destroy(obj);
 			}
 		}
 		container = null;
-		container = new Dictionary<GameObject, List<GameObject>>();
+		container = new Dictionary<string, Queue<GameObject>>();
+        prefabContainer.Clear();
+        prefabContainer = null;
+        prefabContainer = new Dictionary<string, GameObject>();
 	}
 }
