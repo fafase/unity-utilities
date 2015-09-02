@@ -1,0 +1,150 @@
+using UnityEngine;
+using System.Collections;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+
+public class StateMachine : MonoBehaviour
+{
+
+    class State
+    {
+        public Enum name = null;
+
+        public Action updateMethod = () => { };
+        public Action < Enum > enterMethod = (state) => { };
+        public Action < Enum > exitMethod = (state) => { };
+
+        public State(Enum name)
+        {
+            this.name = name;
+        }
+    }
+
+    #region Variables
+
+    private Dictionary < Enum, State > states;
+
+    private State currentState = null;
+    private bool inTransition = false;
+    private bool initialized = false;
+    private bool debugMode = false;
+
+    private Action OnUpdate = null;
+
+    public Enum CurrentState { get { return this.currentState.name; } }
+
+    #endregion
+
+    #region Unity lifecycle
+
+    protected virtual void Update()
+    {
+        this.OnUpdate();
+    }
+
+    #endregion
+
+    private bool Initialized()
+    {
+        if (!initialized)
+        {
+            Debug.LogError(this.GetType().ToString() + ": StateMachine is not initialized. You need to call InitializeStateMachine( bool debug, bool allowMultiTransition = false )");
+            return false;
+        }
+        return true;
+    }
+
+    private static T GetMethodInfo < T > (object obj, Type type, string method, T Default) where T : class
+    {
+        Type baseType = type;
+        MethodInfo methodInfo = baseType.GetMethod(method, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+        if (methodInfo != null)
+        {
+            return Delegate.CreateDelegate(typeof(T), obj, methodInfo) as T;
+        }
+        return Default;
+    }
+
+    protected void InitializeStateMachine <T> (bool debug)
+    {
+        if (this.initialized == true)
+        {
+            Debug.LogError("The StateMachine component on " + this.GetType().ToString() + " is already initialized.");
+            return;
+        }
+        this.initialized = true;
+
+        var values = Enum.GetValues(typeof(T));
+
+        this.states = new Dictionary < Enum, State > ();
+
+        for (int i = 0; i < values.Length; i++)
+        {
+            this.initialized = this.CreateNewState((Enum)values.GetValue(i));
+            State state = states[(Enum)values.GetValue(i)];
+            if (i == 0)
+            {
+                this.currentState = state;
+            }
+        }
+
+        this.inTransition = false;
+        this.debugMode = debug;
+
+        this.currentState.enterMethod(currentState.name);
+
+        this.OnUpdate = this.currentState.updateMethod;
+    }
+
+    private bool CreateNewState(Enum newstate) 
+    { 
+        if (this.Initialized() == false) { return false; } 
+        if (this.states.ContainsKey(newstate) == true) 
+        { 
+            Debug.Log(newstate + " is already registered in " + this.GetType().ToString()); 
+            return false; 
+        } 
+        State s = new State(newstate); 
+        Type type = this.GetType(); 
+        s.enterMethod = StateMachine.GetMethodInfo < Action < Enum > > (this, type, "Enter" + newstate, DoNothingEnterExit); 
+        s.updateMethod = StateMachine.GetMethodInfo < Action > (this, type, "Update" + newstate, DoNothingUpdate); 
+        s.exitMethod = StateMachine.GetMethodInfo < Action < Enum > > (this, type, "Exit" + newstate, DoNothingEnterExit); 
+        this.states.Add(newstate, s); 
+        return true; 
+    }
+ 
+    protected bool ChangeCurrentState(Enum newstate) 
+    { 
+        if (this.Initialized() == false) { return false; } 
+        if (this.inTransition) 
+        { 
+            if (this.debugMode == true) 
+            { 
+                Debug.LogWarning(this.GetType().ToString() + " requests transition to state " + newstate + " when still transitioning to state "); 
+            } 
+            return false; 
+        } 
+        if (this.debugMode == true) { 
+            Debug.Log(this.GetType().ToString() + " transition: " + this.currentState.name + " => " + newstate); 
+        } 
+        State transitionTarget = this.states[newstate]; 
+        if (this.currentState.name == transitionTarget.name) {   
+            Debug.LogError(this.GetType().ToString() + " transition: " + this.currentState.name + " => " + newstate +" is same state"); 
+            return false; 
+        } 
+        this.inTransition = true; 
+        this.currentState.exitMethod(transitionTarget.name);  
+        transitionTarget.enterMethod(this.currentState.name); 
+        this.currentState = transitionTarget; 
+        if (transitionTarget == null || this.currentState == null) { 
+            Debug.LogError(this.GetType().ToString() + " cannot finalize transition; source or target state is null!"); 
+        } else { 
+            this.inTransition = false; 
+        } 
+        this.OnUpdate = this.currentState.updateMethod; 
+        return true; 
+    } 
+    private static void DoNothingUpdate() { } 
+    private static void DoNothingEnterExit(Enum state) { } 
+}
