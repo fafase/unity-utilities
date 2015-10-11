@@ -6,6 +6,7 @@ using System.Reflection;
 
 public class StateMachine : MonoBehaviour
 {
+    [System.Serializable]
     public class State
     {
         public Enum name = null;
@@ -67,15 +68,18 @@ public class StateMachine : MonoBehaviour
     private static T GetMethodInfo<T> (object obj, Type type, string method, T Default) where T : class
     {
         Type baseType = type;
-
-        MethodInfo methodInfo = baseType.GetMethod(method, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-        if (methodInfo != null)
+        while (baseType != typeof(MonoBehaviour))
         {
-            return Delegate.CreateDelegate(typeof(T), obj, methodInfo) as T;
+            MethodInfo methodInfo = baseType.GetMethod(method, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+            if (methodInfo != null)
+            {
+                return Delegate.CreateDelegate(typeof(T), obj, methodInfo) as T;
+            }
+            baseType = baseType.BaseType;
         }
         return Default;
     }
-     protected void InitializeStateMachine<T>(Enum initialState, bool debug, , bool multiTransition = false)
+     protected void InitializeStateMachine<T>(Enum initialState, bool debug, bool multiTransition = false)
     {
        if (this.initialized == true)
        {
@@ -93,7 +97,7 @@ public class StateMachine : MonoBehaviour
        this.currentState = this.states[initialState];
        this.inTransition = false;
        this.debugMode = debug;
-    
+       if (this.debugMode == true) { Debug.Log("Initialized with :" + this.currentState.ToString()); }
        this.currentState.enterMethod(currentState.name);
        this.OnUpdate = this.currentState.updateMethod;
     }
@@ -304,6 +308,24 @@ public class StateMachine : MonoBehaviour
     protected bool ContainsState(Enum state)
     {
         return this.states.ContainsKey(state);
+    }
+    protected bool CreateNewStateWithTransitions(Enum newState, Enum[] transitions, bool forceTransition = false)
+    {
+        if (this.Initialized() == false) { return false; }
+        if (this.CreateNewState(newState) == false) { return false; }
+
+        State s = states[newState];
+        s.forceTransition = forceTransition;
+        foreach (Enum t in transitions)
+        {
+            if (s.transitions.Contains(t) == true)
+            {
+                Debug.LogError("State: " + newState + " already contains a transition for " + t + " in " + this.GetType().ToString());
+                continue;
+            }
+            s.transitions.Add(t);
+        }
+        return true;  
     }
     private static void DoNothingUpdate() { }
     private static void DoNothingEnterExit(Enum state) { }
