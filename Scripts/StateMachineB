@@ -69,7 +69,7 @@ public class StateMachine : MonoBehaviour
         return Default;
     }
 
-    protected void InitializeStateMachine<T>(Enum initialState, bool debug)
+ protected void InitializeStateMachine<T>(Enum initialState, bool debug)
     {
        if (this.initialized == true)
        {
