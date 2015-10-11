@@ -118,7 +118,24 @@ public class StateMachine : MonoBehaviour
         this.states.Add(newstate, s);
         return true;
     }
+    protected bool CreateNewStateWithTransitions(Enum newState, Enum[] transitions, bool forceTransition = false)
+    {
+        if (this.Initialized() == false) { return false; }
+        if (this.CreateNewState(newState) == false) { return false; }
 
+        State s = states[newState];
+        s.forceTransition = forceTransition;
+        foreach (Enum t in transitions)
+        {
+            if (s.transitions.Contains(t) == true)
+            {
+                Debug.LogError("State: " + newState + " already contains a transition for " + t + " in " + this.GetType().ToString());
+                continue;
+            }
+            s.transitions.Add(t);
+        }
+        return true;
+    }
     protected bool AddTransitionsToState(Enum newState, Enum[] transitions, bool forceTransition = false)
     {
         if (this.Initialized() == false) { return false; }
@@ -223,36 +240,6 @@ public class StateMachine : MonoBehaviour
         return true;
     }
 
-    protected bool AddTransitionToExistingState(Enum state, Enum[] transitions) 
-    {
-        if (this.states.ContainsKey(state) == false) 
-        {
-            if (this.debugMode) 
-            {
-                Debug.LogError("The given state "+ state + " is not a registered state");
-            }
-            return false;
-        }
-        State existingState = this.states[state];
-        foreach (Enum transition in transitions) 
-        {
-            if (this.states.ContainsKey(transition) == false) 
-            {
-                Debug.LogError(transition +" needs to be created first.");
-                return false;
-            }
-            if (existingState.transitions.Contains(transition) == true) 
-            {
-                if (this.debugMode) 
-                {
-                    Debug.LogWarning(existingState.name +" already contains "+ transition);
-                }
-                continue;
-            }
-            existingState.transitions.Add(transition);
-        }
-        return true;
-    }
     protected bool RemoveTransitionToExistingState(Enum state, Enum[]transitions) 
     {
         if (this.states.ContainsKey(state) == false)
@@ -309,24 +296,7 @@ public class StateMachine : MonoBehaviour
     {
         return this.states.ContainsKey(state);
     }
-    protected bool CreateNewStateWithTransitions(Enum newState, Enum[] transitions, bool forceTransition = false)
-    {
-        if (this.Initialized() == false) { return false; }
-        if (this.CreateNewState(newState) == false) { return false; }
-
-        State s = states[newState];
-        s.forceTransition = forceTransition;
-        foreach (Enum t in transitions)
-        {
-            if (s.transitions.Contains(t) == true)
-            {
-                Debug.LogError("State: " + newState + " already contains a transition for " + t + " in " + this.GetType().ToString());
-                continue;
-            }
-            s.transitions.Add(t);
-        }
-        return true;  
-    }
+    
     private static void DoNothingUpdate() { }
     private static void DoNothingEnterExit(Enum state) { }
 }
