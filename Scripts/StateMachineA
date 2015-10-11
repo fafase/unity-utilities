@@ -66,35 +66,27 @@ public class StateMachine : MonoBehaviour
         return Default;
     }
 
-    protected void InitializeStateMachine <T> (bool debug)
+    protected void InitializeStateMachine<T>(Enum initialState, bool debug)
     {
-        if (this.initialized == true)
-        {
-            Debug.LogError("The StateMachine component on " + this.GetType().ToString() + " is already initialized.");
-            return;
-        }
-        this.initialized = true;
-
-        var values = Enum.GetValues(typeof(T));
-
-        this.states = new Dictionary < Enum, State > ();
-
-        for (int i = 0; i < values.Length; i++)
-        {
-            this.initialized = this.CreateNewState((Enum)values.GetValue(i));
-            State state = states[(Enum)values.GetValue(i)];
-            if (i == 0)
-            {
-                this.currentState = state;
-            }
-        }
-
-        this.inTransition = false;
-        this.debugMode = debug;
-
-        this.currentState.enterMethod(currentState.name);
-
-        this.OnUpdate = this.currentState.updateMethod;
+       if (this.initialized == true)
+       {
+           Debug.LogError("The StateMachine component on " + this.GetType().ToString() + " is already initialized.");
+           return;
+       }
+       this.initialized = true;
+    
+       var values = Enum.GetValues(typeof(T));
+       this.states = new Dictionary<Enum, State>();
+       for (int i = 0; i < values.Length; i++)
+       {
+          this.initialized = this.CreateNewState((Enum)values.GetValue(i));
+       }
+       this.currentState = this.states[initialState];
+       this.inTransition = false;
+       this.debugMode = debug;
+    
+       this.currentState.enterMethod(currentState.name);
+       this.OnUpdate = this.currentState.updateMethod;
     }
 
     private bool CreateNewState(Enum newstate) 
