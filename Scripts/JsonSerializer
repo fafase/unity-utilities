@@ -1198,7 +1198,20 @@ namespace JSON
 		// If type is item, it has to be int, float, string, boolean
 		private static void SetJSONItem(Type attrFieldType, JSONObject jsonObject, string data, FieldInfo info, object rootObject)
 		{
-			if (attrFieldType == typeof(int))
+			if(attrFieldType.IsEnum)
+			{
+				string valueStr = jsonObject.GetString(data);
+				if (valueStr != null)
+				{
+					try
+					{
+						object result = Enum.Parse (attrFieldType, valueStr);
+						info.SetValue(rootObject, result);
+					}catch(Exception) { }
+					return;
+				}
+			}
+			else if (attrFieldType == typeof(int))
 			{
 				string valueStr = jsonObject.GetString(data);
 				if (valueStr != null)
