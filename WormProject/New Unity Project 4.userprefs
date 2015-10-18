@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Worm\Node.cs">
+    <Files>
+      <File FileName="Assets\Worm\WormRendering.cs" Line="57" Column="38" />
+      <File FileName="Assets\Worm\WormController.cs" Line="33" Column="31" />
+      <File FileName="Assets\Worm\Node.cs" Line="16" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
