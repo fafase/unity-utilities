@@ -1,0 +1,155 @@
+public static class TimerController
+{
+	private static Dictionary <MonoBehaviour, List<CoroutineObj>> dict = new Dictionary<MonoBehaviour, List<CoroutineObj>>();
+	public static int InvokedMethods(this MonoBehaviour mono){
+		if(dict.ContainsKey(mono) == false){ return 0; }
+		return dict[mono].Count;
+	}
+
+	public static bool IsInvokingMethod(this MonoBehaviour mono){
+		if(dict.ContainsKey(mono) == false){ return false; }
+		return dict[mono].Count > 0;
+	}
+	public static bool IsInvokingMethod(this MonoBehaviour mono, string action){
+		if(dict.ContainsKey(mono) == false){ return false; }
+		List<CoroutineObj>list = dict[mono];
+		foreach(CoroutineObj co in list){
+			if(co.name == action){ return true; }
+		}
+		return false;
+	}
+	public static void DelayInvoke(this MonoBehaviour mono, float timer, 
+	                               string action, params object [] parameters){
+		if(action == null){
+			throw new System.ArgumentException("Action argument cannot be null");
+		}
+		MethodInfo mi = mono.GetType().GetMethod(action,BindingFlags.Instance|BindingFlags.NonPublic|
+		                                         BindingFlags.Public|BindingFlags.Static);
+		if(mi == null) { throw new System.MissingMethodException();	}
+		mono.StartCoroutine(InvokeCoroutine(mono, timer, mi, parameters));
+	}
+	private static IEnumerator InvokeCoroutine(MonoBehaviour mono, float timer, 
+	                                           MethodInfo action, object[]parameters){
+		string actionName = action.Name;
+		List<CoroutineObj>list = null;
+		CoroutineObj coroutineObj = new CoroutineObj(actionName, true);
+		if(dict.ContainsKey(mono) == false){
+			dict.Add (mono,new List<CoroutineObj>(){coroutineObj});
+			list = dict[mono];
+		} else {
+			list = dict[mono];
+			list.Add (coroutineObj);
+		}
+		while(timer > 0) {
+			if(coroutineObj.isRunning == false) {
+				foreach(CoroutineObj co in list) {
+					if(co.name == actionName) {
+						list.Remove(co);
+						break;
+					}
+				}
+				if(list.Count == 0) { dict.Remove(mono); }
+				yield break;
+			}
+			timer-=Time.deltaTime;
+		
+			yield return null;
+		}
+		action.Invoke(mono, parameters);
+		foreach(CoroutineObj co in list) {
+			if(co.name == actionName){
+				list.Remove(co);
+				break;
+			}
+		}
+		if(list.Count == 0) { dict.Remove(mono); }
+	}
+	public static void DelayInvokeRepeat(this MonoBehaviour mono,float firstCall, float timer, 
+	                                     string action, params object [] parameters) {
+		if(action == null) { throw new System.ArgumentException("Action argument cannot be null"); }
+		MethodInfo mi = mono.GetType().GetMethod(action,BindingFlags.Instance|BindingFlags.NonPublic|
+		                                         BindingFlags.Public|BindingFlags.Static);
+		if(mi == null) { throw new System.MissingMethodException(); }
+		mono.StartCoroutine(InvokeRepeatCoroutine(mono,firstCall, timer, mi, parameters));
+	}
+	private static IEnumerator InvokeRepeatCoroutine(MonoBehaviour mono,float firstCall, float timer, 
+	                                                 MethodInfo action, object[]parameters) {
+		string actionName = action.Name;
+		List<CoroutineObj>list = null;
+		CoroutineObj coroutineObj = new CoroutineObj(actionName, true);
+		if(dict.ContainsKey(mono) == false){
+			dict.Add (mono, new List<CoroutineObj>(){coroutineObj});
+			list = dict[mono];
+		} else {
+			list = dict[mono];
+			list.Add (coroutineObj);
+		}
+		while(firstCall > 0) {
+			if(coroutineObj.isRunning == false) {
+				foreach(CoroutineObj co in list) {
+					if(co.name == actionName) {
+						list.Remove (co);
+						break;
+					}
+				}
+				if(list.Count == 0) { dict.Remove(mono); }
+				yield break;
+			}
+			firstCall -= Time.deltaTime;		
+			yield return null;
+		}
+		float timerTrack  = 0f;
+		while(timerTrack < timer) {
+			if(coroutineObj.isRunning == false) {
+				foreach(CoroutineObj co in list) {
+					if(co.name == actionName) {
+						list.Remove(co);
+						break;
+					}
+				}
+				if(list.Count == 0) { dict.Remove(mono); }
+				yield break;
+			}
+			timerTrack += Time.deltaTime;
+			if(timerTrack > timer) {
+				action.Invoke(mono, parameters);
+				timerTrack = 0f;
+			}
+			yield return null;
+		}
+		foreach(CoroutineObj co in list) {
+			if(co.name == actionName){
+				list.Remove(co);
+				break;
+			}
+		}
+		if(list.Count == 0) {	dict.Remove(mono); }
+	}
+	public static bool CancelDelayInvoke(this MonoBehaviour mono,string action) {
+		if(dict.ContainsKey(mono) == false){ return false; }
+		List<CoroutineObj>list = dict[mono];
+		foreach(CoroutineObj co in list) {
+			if(co.name == action) {
+				co.isRunning = false;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static bool CancelDelayAllInvokes(this MonoBehaviour mono) {
+		if(dict.ContainsKey(mono) == false){ return false; }
+		List<CoroutineObj>list = dict[mono];
+		foreach(CoroutineObj co in list) { co.isRunning = false; }
+		return true;
+	}
+
+	class CoroutineObj{
+		public string name = null;
+		public bool isRunning = false;
+		public CoroutineObj(string name, bool isRunning) {
+			this.name = name;
+			this.isRunning = isRunning;
+		}
+	}
+}
