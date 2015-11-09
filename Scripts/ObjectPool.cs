@@ -45,7 +45,7 @@ public sealed class ObjectPool
             obj = queue.Dequeue();
             obj.transform.parent = container;
             obj.SetActive(true);
-            IPoolObject poolObject = obj.GetComponent();
+            IPoolObject poolObject = obj.GetComponent<IPoolObject>();
             poolObject.Init();
         }
         if (obj == null && instantiateIfNone == true)
@@ -64,11 +64,11 @@ public sealed class ObjectPool
     }
     private GameObject CreateObject(GameObject prefab, Transform container)
     {
-        IPoolObject poolObjectPrefab = prefab.GetComponent();
+        IPoolObject poolObjectPrefab = prefab.GetComponent<IPoolObject>();
         if(poolObjectPrefab== null){Debug.Log ("Wrong type of object"); return null;}
 
         GameObject obj = (GameObject)Object.Instantiate(prefab);
-        IPoolObject poolObject = obj.GetComponent();
+        IPoolObject poolObject = obj.GetComponent<IPoolObject>();
         obj.name = prefab.name;
         poolObject.Prefab = prefab;
         obj.transform.parent = container;
@@ -89,7 +89,7 @@ public sealed class ObjectPool
         {
             obj.transform.parent = parent;
         }
-        IPoolObject poolObject = obj.GetComponent();
+        IPoolObject poolObject = obj.GetComponent<IPoolObject>();
         GameObject prefab = null;
         if(poolObject != null)
         {
