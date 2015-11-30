@@ -37,22 +37,24 @@ public sealed class ObjectPool
 	
     public GameObject PopFromPool(GameObject prefab, bool forceInstantiate = false, bool instantiateIfNone = false, Transform container = null)
     {
-        if (forceInstantiate == true) { return CreateObject(prefab, container); }
-        GameObject obj = null;
-        Queue<GameObject> queue = FindInContainer(prefab);
-        if (queue.Count > 0)
-        {
-            obj = queue.Dequeue();
-            obj.transform.parent = container;
-            obj.SetActive(true);
-            IPoolObject poolObject = obj.GetComponent<IPoolObject>();
-            poolObject.Init();
-        }
-        if (obj == null && instantiateIfNone == true)
-        {
-            return CreateObject(prefab, container);
-        }
-        return obj;
+	GameObject obj = null;
+	if (forceInstantiate == true) 
+	{ 
+		obj =  CreateObject(prefab, container); 
+	}
+	Queue<GameObject> queue = FindInContainer(prefab);
+	if (queue.Count > 0)
+	{
+		obj = queue.Dequeue();
+		obj.SetActive(true);
+		obj.transform.parent = container;
+	}
+	if (obj == null && instantiateIfNone == true)
+	{
+		obj = CreateObject(prefab, container);
+	}
+	obj.GetComponent<IPoolObject> ().Init ();
+	return obj;
     }
     private Queue<GameObject> FindInContainer(GameObject prefab)
     {
