@@ -90,6 +90,10 @@ public class StateMachine : MonoBehaviour
     
        this.currentState.enterMethod(currentState.name);
        this.OnUpdate = this.currentState.updateMethod;
+        if (this.debugMode == true) 
+		{
+			Debug.Log ("StateMachine : "+ this.GetType().ToString() +" initialized with " + this.currentState.name +" state.");		
+		}
     }
 
     private bool CreateNewState(Enum newstate) 
