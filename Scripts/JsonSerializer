@@ -36,23 +36,29 @@ namespace JSON
 	
 	static class JSONLogger
 	{
+
 		#if USE_UNITY_DEBUGGING
 		public static void Log(string str)
 		{
-			UnityEngine.Debug.Log(str);
+#if USE_LOGGER
+			Debug.Log(str);
+#endif
 		}
 		public static void Error(string str)
 		{
-			UnityEngine.Debug.Log(str);
+			#if USE_LOGGER
+			Debug.LogError(str);
+			#endif
 		}
 		#else
 		public static void Log(string str) {
-			System.Diagnostics.Debug.WriteLine(str);
+			Debug.WriteLine(str);
 		}
 		public static void Error(string str) {
-			System.Diagnostics.Debug.WriteLine(str);
+			Debug.WriteLine(str);
 		}
 		#endif
+
 	}
 	
 	public enum JSONValueType
@@ -1002,11 +1008,14 @@ namespace JSON
 			}
 		}
 	}
-}
 
+	[System.Serializable]
+	public class JSONClass : IDisposable
+	{
+		public void Dispose () { }
+		public JSONClass() { }
+	}
 
-namespace JSON
-{
 	internal enum AttrEnum{ None, AttrObject = 0, AttrItem = 1, AttrArray = 2 }
 	[System.Serializable]
 	[AttributeUsage(AttributeTargets.All)]
@@ -1052,7 +1061,7 @@ namespace JSON
 			{
 				// Iterate through all fields with JSONAttribute from root object
 				JSONAttribute[] attrFields = (JSONAttribute[])member.GetCustomAttributes(typeof(JSONAttribute), true);
-				
+
 				foreach (JSONAttribute attrField in attrFields)
 				{
 					Type attrFieldType = attrField.type;    // Get the type of the field
@@ -1096,14 +1105,7 @@ namespace JSON
 		{
 			return (T)Deserialize(typeof(T), json);
 		}
-		public static Dictionary<string,object>DeserializeToDictionary(string jsonFile, string key)
-		{
-			if(CheckParameters(jsonFile, key) == false)
-			{
-				return null;
-			}
-			return null;
-		}
+
 		public static string GetJsonFile(string jsonFile, string key)
 		{
 			if(CheckParameters(jsonFile, key) == false)
@@ -1111,9 +1113,9 @@ namespace JSON
 				return null;
 			}
 			return null;
-			
+
 		}
-		
+
 		private static bool CheckParameters(string jsonFile, string key)
 		{
 			if(jsonFile == null || key == null)
@@ -1172,7 +1174,7 @@ namespace JSON
 						Serialize( info.GetValue(obj), jsonChild);
 						break;
 					}
-						
+
 					case AttrEnum.AttrItem:
 					{
 						object val = info.GetValue(obj);
@@ -1182,7 +1184,7 @@ namespace JSON
 						{
 							Color col = (Color)val;
 							result = ((int)(col.r * 255f)).ToString() +","
-								+((int)(col.g * 255f)).ToString() +","
+									+((int)(col.g * 255f)).ToString() +","
 									+((int)(col.b * 255f)).ToString() +","
 									+((int)(col.a * 255f)).ToString();
 						}
@@ -1242,7 +1244,7 @@ namespace JSON
 			else if (attrFieldType == typeof(int))
 			{
 				string valueStr = jsonObject.GetString(data);
-				UnityEngine.Debug.Log (valueStr);
+				Debug.Log (valueStr);
 				if (valueStr != null)
 				{
 					int intResult = 0;
@@ -1254,7 +1256,7 @@ namespace JSON
 				}
 				JSONValue value = jsonObject.GetValue(data);
 				if (value != null) { info.SetValue(rootObject, (int)value.Number); }
-				
+
 			}
 			else if (attrFieldType == typeof(string))
 			{
@@ -1375,7 +1377,7 @@ namespace JSON
 				objs[i] = Deserialize(attrFieldType, obj.ToString());
 			}
 		}
-		
+
 		private static Color HexToColor(string hex)
 		{
 			byte r = byte.Parse(hex.Substring(0,2), System.Globalization.NumberStyles.HexNumber);
@@ -1397,4 +1399,7 @@ namespace JSON
 			return hex;
 		}
 	}
+	
+
+
 }
