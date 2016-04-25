@@ -29,5 +29,17 @@
 			"name": "GM7",
 			"strings": [-1, 3, 4, 4, -1, 3]
 		}]
+	}, {
+		"name": "Rock"
+	}, {
+		"name": "Blues"
+	}, {
+		"name": "Dance"
+	}, {
+		"name": "Reggae"
+	}, {
+		"name": "Latin"
+	}, {
+		"name": "Bossa"
 	}]
 }
