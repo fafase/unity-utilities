@@ -1,45 +1,77 @@
 {
-	"sequences": [{
-		"name": "Jazz",
-		"chords": [{
-			"name": "CM7",
-			"strings": [-1, 1, 3, 2, 3, -1]
-		}, {
-			"name": "Dm7",
-			"strings": [1, 1, 2, 0, -1, -1]
-		}, {
-			"name": "A7",
-			"strings": [0, 2, 0, 2, 0, -1]
-		}, {
-			"name": "GM7",
-			"strings": [-1, 3, 4, 4, -1, 3]
-		}]
+	"sequences": [
+		{
+			"name" : "Lesson1",
+			"rhythm": [],
+			"chords":[]
+		}
+	{
+	"lesson": [{
+		"name": "Lesson 1",
+		"available": true,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Country",
-		"chords": [{
-			"name": "C",
-			"strings": [-1, 1, 0, 2, 3, -1]
-		}, {
-			"name": "G",
-			"strings": [3, 3, 0, 0, 2, 3]
-		}, {
-			"name": "F/C",
-			"strings": [-1, 1, 2, 3, 3, -1]
-		}, {
-			"name": "G7",
-			"strings": [-1, -1, 4, 3, 2, 3]
-		}]
+		"name": "Lesson 2",
+		"available": true,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Rock"
+		"name": "Lesson 3",
+		"available": true,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Blues"
+		"name": "Lesson 4",
+		"available": true,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Dance"
+		"name": "Lesson 5",
+		"available": false,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Reggae"
+		"name": "Lesson 6",
+		"available": false,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Latin"
+		"name": "Lesson 7",
+		"available": false,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}, {
-		"name": "Bossa"
+		"name": "Lesson 8",
+		"available": false,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
+	}, {
+		"name": "Blues",
+		"available": false,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
+	}, {
+		"name": "Lesson9",
+		"available": true,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
+	}, {
+		"name": "Pop",
+		"available": false,
+		"rhythm": [],
+		"warmup": [],
+		"sequence": []
 	}]
+}
 }
