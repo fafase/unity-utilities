@@ -2,10 +2,10 @@
 	"lesson": [{
 		"name": "Lesson 1",
 		"available": true,
-		"rhythm": [{
+		"rhythm": {
 			"left": [0, 2],
 			"right": [1, 2]
-		}]
+		}
 	}, {
 		"name": "Lesson 2",
 		"available": true
