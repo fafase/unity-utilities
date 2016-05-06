@@ -1,5 +1,5 @@
 {
-	"content":{	"lesson": [{
+	"lesson": [{
 		"name": "Lesson 1",
 		"available": true,
 		"rhythm": [{
@@ -68,5 +68,5 @@
 		"rhythm": [],
 		"warmup": [],
 		"sequence": []
-	}]}
+	}]
 }
