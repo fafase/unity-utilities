@@ -5,68 +5,27 @@
 		"rhythm": [{
 			"left": [0, 2],
 			"right": [1, 2]
-		}],
-		"warmup": [],
-		"sequence": []
+		}]
 	}, {
 		"name": "Lesson 2",
-		"available": true,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": true
 	}, {
 		"name": "Lesson 3",
-		"available": true,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": true
 	}, {
 		"name": "Lesson 4",
-		"available": true,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": true
 	}, {
 		"name": "Lesson 5",
-		"available": false,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": false
 	}, {
 		"name": "Lesson 6",
-		"available": false,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": false
 	}, {
 		"name": "Lesson 7",
-		"available": false,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": false
 	}, {
 		"name": "Lesson 8",
-		"available": false,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
-	}, {
-		"name": "Blues",
-		"available": false,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
-	}, {
-		"name": "Lesson9",
-		"available": true,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
-	}, {
-		"name": "Pop",
-		"available": false,
-		"rhythm": [],
-		"warmup": [],
-		"sequence": []
+		"available": false
 	}]
 }
