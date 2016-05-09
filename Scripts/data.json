@@ -3,19 +3,19 @@
 		"name": "Lesson 1",
 		"available": true,
 		"rhythm": [{
-			"bpms": [0, 1]
+			"bpms": [0.0, 2.0]
 		}, {
-			"bpms": [1, 1]
+			"bpms": [1.0, 3.0]
 		}]
 	}, {
 		"name": "Lesson 2",
 		"available": true,
 		"rhythm": [{
-			"bpms": [0, 1]
+			"bpms": [0.0, 2.0]
 		}, {
-			"bpms": [1, 1]
+			"bpms": [1.0, 3.0]
 		}, {
-			"bpms": [1, 1]
+			"bpms": [0.0, 2.0]
 		}]
 	}]
 }
