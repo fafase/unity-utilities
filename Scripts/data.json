@@ -2,30 +2,20 @@
 	"lesson": [{
 		"name": "Lesson 1",
 		"available": true,
-		"rhythm": {
-			"left": [0, 2],
-			"right": [1, 2]
-		}
+		"rhythm": [{
+			"bpms": [0, 1]
+		}, {
+			"bpms": [1, 1]
+		}]
 	}, {
 		"name": "Lesson 2",
-		"available": true
-	}, {
-		"name": "Lesson 3",
-		"available": true
-	}, {
-		"name": "Lesson 4",
-		"available": true
-	}, {
-		"name": "Lesson 5",
-		"available": false
-	}, {
-		"name": "Lesson 6",
-		"available": false
-	}, {
-		"name": "Lesson 7",
-		"available": false
-	}, {
-		"name": "Lesson 8",
-		"available": false
+		"available": true,
+		"rhythm": [{
+			"bpms": [0, 1]
+		}, {
+			"bpms": [1, 1]
+		}, {
+			"bpms": [1, 1]
+		}]
 	}]
 }
