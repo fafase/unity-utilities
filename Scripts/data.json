@@ -1,21 +1,45 @@
 {
-	"lesson": [{
-		"name": "Lesson 1",
-		"available": true,
-		"rhythm": [{
-			"bpms": [0.0, 2.0]
+	"sequences": [{
+		"name": "Jazz",
+		"chords": [{
+			"name": "CM7",
+			"strings": [-1, 1, 3, 2, 3, -1]
 		}, {
-			"bpms": [1.0, 3.0]
+			"name": "Dm7",
+			"strings": [1, 1, 2, 0, -1, -1]
+		}, {
+			"name": "A7",
+			"strings": [0, 2, 0, 2, 0, -1]
+		}, {
+			"name": "GM7",
+			"strings": [-1, 3, 4, 4, -1, 3]
 		}]
 	}, {
-		"name": "Lesson 2",
-		"available": true,
-		"rhythm": [{
-			"bpms": [0.0, 2.0]
+		"name": "Country",
+		"chords": [{
+			"name": "C",
+			"strings": [-1, 1, 0, 2, 3, -1]
 		}, {
-			"bpms": [1.0, 3.0]
+			"name": "G",
+			"strings": [3, 3, 0, 0, 2, 3]
 		}, {
-			"bpms": [0.0, 2.0]
+			"name": "F/C",
+			"strings": [-1, 1, 2, 3, 3, -1]
+		}, {
+			"name": "G7",
+			"strings": [-1, -1, 4, 3, 2, 3]
 		}]
+	}, {
+		"name": "Rock"
+	}, {
+		"name": "Blues"
+	}, {
+		"name": "Dance"
+	}, {
+		"name": "Reggae"
+	}, {
+		"name": "Latin"
+	}, {
+		"name": "Bossa"
 	}]
 }
