@@ -1,1 +1,39 @@
-
+{
+	"lesson": [{
+		"name": "Lesson 1",
+		"available": true,
+		"rhythm": {
+			"bar": 4.0,
+			"beat": [{
+				"bpms": [0.0, 2.0]
+			}, {
+				"bpms": [1.0, 3.0]
+			}]
+		}
+	}, {
+		"name": "Lesson 2",
+		"available": true,
+		"rhythm": {
+			"bar": 4.0,
+			"beat": [{
+				"bpms": [0.0, 2.0]
+			}, {
+				"bpms": [1.0, 3.0]
+			}, {
+				"bpms": [0.0, 2.0]
+			}]
+		}
+	}, {
+		"name": "Lesson 3",
+		"available": true,
+		"rhythm": {
+			"bar": 4.0,
+			"beat": [{
+				"bpms": [0.0, 2.0]
+			}, {
+				"bpms": [1.0, 3.0]
+			}, {
+				"bpms": [0.0, 2.0]
+			}]
+		}
+	}]
