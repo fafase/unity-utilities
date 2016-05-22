@@ -48,7 +48,7 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
- 			"introText": " Hit a 20 streak \n in 80 and 100 bpm. ",
+ 			"introText": " Hit a 10 streak \n in 80 and 100 bpm. ",
  			"streakChallenge": [10,10],
  			"bpmChallenge": [80, 100],
  			"beat": [{
