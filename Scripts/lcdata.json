@@ -4,7 +4,7 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
- 			"introText": " Hit a 10 streak \n in 60 bpm. ",
+ 			"introText": " Hit a {0} streak \n in {1} bpm. ",
  			"streakChallenge": 15,
  			"bpmChallenge": 60,
  			"beat": [{
