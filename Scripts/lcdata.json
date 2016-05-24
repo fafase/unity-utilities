@@ -52,9 +52,11 @@
  			"streakChallenge": 20,
  			"bpmChallenge": 80,
  			"beat": [{
- 				"bpms": [0.0, 2.0]
+ 				"bpms": [0.0]
  			}, {
  				"bpms": [1.0, 3.0]
+ 			},, {
+ 				"bpms": [2.0]
  			}]
  		}
  	}, {
