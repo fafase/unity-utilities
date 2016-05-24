@@ -4,7 +4,7 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
- 			"introText": " Hit a {0} streak {1} in {2} bpm. ",
+ 			"introText": " Hit a {0} streak in {2} bpm. ",
  			"streakChallenge": 15,
  			"bpmChallenge": 60,
  			"beat": [{
@@ -20,7 +20,7 @@
  			"bar": 4.0,
  			"streakChallenge":20,
  			"bpmChallenge": 60,
- 				"introText": " Hit a {0} streak {1} in {2} bpm. ",
+ 				"introText": " Hit a {0} streak in {2} bpm. ",
  			"streakChallenge": 10,
  			"bpmChallenge": [60],
  			"beat": [{
@@ -36,7 +36,7 @@
  			"bar": 4.0,
   	"streakChallenge":10,
  			"bpmChallenge": 60,
- 				"introText": " Hit a {0} streak {1} in {2} bpm. ",
+ 				"introText": " Hit a {0} streak in {2} bpm. ",
  			"beat": [{
  				"bpms": [0.0, 0.5, 2]
  			}, {
@@ -48,7 +48,7 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
- 				"introText": " Hit a {0} streak {1} in {2} bpm. ",
+ 				"introText": " Hit a {0} streak in {2} bpm. ",
  			"streakChallenge": 20,
  			"bpmChallenge": 80,
  			"beat": [{
@@ -61,7 +61,7 @@
  		"name": "Lesson 5",
  		"available": true,
  		"rhythm": {
- 				"introText": " Hit a {0} streak {1} in {2} bpm. ",
+ 				"introText": " Hit a {0} streak in {2} bpm. ",
  			"streakChallenge": 20,
  			"bpmChallenge": 80,
  			"bar": 8.0,
