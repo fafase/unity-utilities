@@ -5,8 +5,8 @@
  		"rhythm": {
  			"bar": 4.0,
  			"introText": " Hit a 10 streak \n in 60 bpm. ",
- 			"streakChallenge": [10],
- 			"bpmChallenge": [60],
+ 			"streakChallenge": 15,
+ 			"bpmChallenge": 60,
  			"beat": [{
  				"bpms": [0.0, 2.0]
  			}, {
@@ -18,8 +18,8 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
- 			"streakChallenge":[10],
- 			"bpmChallenge": [60],
+ 			"streakChallenge":20,
+ 			"bpmChallenge": 60,
  			"introText": " Hit a 10 streak \n in 60 bpm. ",
  			"streakChallenge": 10,
  			"bpmChallenge": [60],
@@ -34,8 +34,8 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
-  	"streakChallenge":[10],
- 			"bpmChallenge": [60],
+  	"streakChallenge":10,
+ 			"bpmChallenge": 60,
  			"introText": " Hit a 10 streak \n in 60 bpm. ",
  			"beat": [{
  				"bpms": [0.0, 0.5, 2]
@@ -48,9 +48,9 @@
  		"available": true,
  		"rhythm": {
  			"bar": 4.0,
- 			"introText": " Hit a 10 streak \n in 80 and 100 bpm. ",
- 			"streakChallenge": [10,10],
- 			"bpmChallenge": [80, 100],
+ 			"introText": " Hit a 10 streak \n in 80bpm. ",
+ 			"streakChallenge": 20,
+ 			"bpmChallenge": 80,
  			"beat": [{
  				"bpms": [0.0, 2.0]
  			}, {
@@ -63,8 +63,8 @@
  		"rhythm": {
 
  			"introText": " Hit a 20 streak \n in 60 and 80 bpm. ",
- 			"streakChallenge": [20, 10],
- 			"bpmChallenge": [60, 80],
+ 			"streakChallenge": 20,
+ 			"bpmChallenge": 80,
  			"bar": 8.0,
  			"beat": [{
  				"bpms": [0.0, 0.5, 2.0, 4.0, 6.0, 6.5]
