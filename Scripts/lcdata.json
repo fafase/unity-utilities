@@ -61,7 +61,7 @@
  		}
  	}, {
  		"name": "Lesson 5",
- 		"available": false,
+ 		"available": true,
  		"rhythm": {
  				"introText": " Hit a {0} streak in {1} bpm. ",
  			"streakChallenge": 20,
