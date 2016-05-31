@@ -1,7 +1,11 @@
  {
  	"lesson": [{
- 		"name": "Lesson 1",
+ 		"name": "Quarter Note 1",
  		"available": true,
+ 		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+ 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
+ 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
+ 		],
  		"rhythm": {
  			"bar": 4.0,
  			"introText": " Hit a {0} streak in {1} bpm. ",
@@ -12,15 +16,22 @@
  			}, {
  				"bpms": [1.0, 3.0]
  			}]
+ 		},
+ 		"warmup": {
+ 			"keylist": [5, 7]
  		}
  	}, {
- 		"name": "Lesson 2",
+ 		"name": "Quarter Note 2",
  		"available": true,
+ 		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+ 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
+ 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
+ 		],
  		"rhythm": {
  			"bar": 4.0,
- 			"streakChallenge":20,
+ 			"streakChallenge": 20,
  			"bpmChallenge": 60,
- 				"introText": " Hit a {0} streak in {1} bpm. ",
+ 			"introText": " Hit a {0} streak in {1} bpm. ",
  			"streakChallenge": 10,
  			"bpmChallenge": [60],
  			"beat": [{
@@ -28,42 +39,63 @@
  			}, {
  				"bpms": [1.0, 3.0]
  			}]
+ 		},
+ 		"warmup": {
+ 			"keylist": [5, 7, 8]
  		}
  	}, {
- 		"name": "Lesson 3",
+ 		"name": "Quarter Note 3",
  		"available": true,
+ 		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+ 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
+ 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
+ 		],
  		"rhythm": {
  			"bar": 4.0,
-  	"streakChallenge":10,
+ 			"streakChallenge": 10,
  			"bpmChallenge": 60,
- 				"introText": " Hit a {0} streak in {1} bpm. ",
+ 			"introText": " Hit a {0} streak in {1} bpm. ",
  			"beat": [{
  				"bpms": [0.0, 0.5, 2]
  			}, {
  				"bpms": [1.0, 3.0]
  			}]
+ 		},
+ 		"warmup": {
+ 			"keylist": [5, 7, 8, 7]
  		}
  	}, {
- 		"name": "Lesson 4",
+ 		"name": "Quarter Note 4",
  		"available": true,
+ 		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+ 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
+ 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
+ 		],
  		"rhythm": {
  			"bar": 4.0,
- 				"introText": " Hit a {0} streak in {1} bpm. ",
+ 			"introText": " Hit a {0} streak in {1} bpm. ",
  			"streakChallenge": 20,
  			"bpmChallenge": 80,
  			"beat": [{
  				"bpms": [0.0]
  			}, {
  				"bpms": [1.0, 3.0]
- 			},{
+ 			}, {
  				"bpms": [2.0]
  			}]
+ 		},
+ 		"warmup": {
+ 			"keylist": [5, 8, 7, 8]
  		}
  	}, {
- 		"name": "Lesson 5",
+ 		"name": "Quarter Note 5",
  		"available": true,
+ 		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+ 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
+ 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
+ 		],
  		"rhythm": {
- 				"introText": " Hit a {0} streak in {1} bpm. ",
+ 			"introText": " Hit a {0} streak in {1} bpm. ",
  			"streakChallenge": 20,
  			"bpmChallenge": 80,
  			"bar": 8.0,
@@ -72,12 +104,15 @@
  			}, {
  				"bpms": [1.0, 3.0, 5.0, 7.0]
  			}]
+ 		},
+ 		"warmup": {
+ 			"keylist": [5, 8, 7, 8]
  		}
  	}, {
  		"name": "Lesson 6",
- 			"introText": " Hit a {0} streak in {1} bpm. ",
- 			"streakChallenge": 20,
- 			"bpmChallenge": 80,
+ 		"introText": " Hit a {0} streak in {1} bpm. ",
+ 		"streakChallenge": 20,
+ 		"bpmChallenge": 80,
  		"rhythm": {
  			"bar": 4.0,
  			"beat": [{
@@ -93,7 +128,7 @@
  		"available": false,
  		"rhythm": {
  			"bar": 4.0,
- 				"introText": " Hit a {0} streak in {1} bpm. ",
+ 			"introText": " Hit a {0} streak in {1} bpm. ",
  			"streakChallenge": 20,
  			"bpmChallenge": 80,
  			"beat": [{
