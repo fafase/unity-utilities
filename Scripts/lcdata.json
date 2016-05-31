@@ -2,7 +2,7 @@
 	"lesson": [{
 		"name": "Quarter Note 1",
 		"available": true,
-		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+		"description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
 		],
@@ -23,7 +23,7 @@
 	}, {
 		"name": "Quarter Note 2",
 		"available": true,
-		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+		"description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
 		],
@@ -46,7 +46,7 @@
 	}, {
 		"name": "Quarter Note 3",
 		"available": true,
-		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+		"description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
 		],
@@ -67,7 +67,7 @@
 	}, {
 		"name": "Quarter Note 4",
 		"available": true,
-		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+		"description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
 		],
@@ -90,7 +90,7 @@
 	}, {
 		"name": "Quarter Note 5",
 		"available": true,
-		"Description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
+		"description": ["Music is defined by rhythm, as a result the simplest notation represents the length of the sound",
 			"When the rhythm goes on, you can count each beat, the most common rhythm is 4 beats, and 1 and 2 and 3 and 4 and 1...",
 			"The length of a note defines how long it should occupy, a quarter note means a quarter of a bar, so it takes one beat"
 		],
