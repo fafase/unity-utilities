@@ -18,7 +18,7 @@
 			}]
 		},
 		"warmup": {
-			"keylist": [5, 7]
+			"keylist": [15, 17]
 		}
 	}, {
 		"name": "Quarter Note 2",
@@ -41,7 +41,7 @@
 			}]
 		},
 		"warmup": {
-			"keylist": [5, 7, 8]
+			"keylist": [15, 17, 18]
 		}
 	}, {
 		"name": "Quarter Note 3",
@@ -62,7 +62,7 @@
 			}]
 		},
 		"warmup": {
-			"keylist": [5, 7, 8, 7]
+			"keylist": [15, 17, 18, 17]
 		}
 	}, {
 		"name": "Quarter Note 4",
@@ -85,7 +85,7 @@
 			}]
 		},
 		"warmup": {
-			"keylist": [5, 8, 7, 8]
+			"keylist": [15, 18, 17, 18]
 		}
 	}, {
 		"name": "Quarter Note 5",
@@ -106,7 +106,7 @@
 			}]
 		},
 		"warmup": {
-			"keylist": [5, 8, 7, 8]
+			"keylist": [15, 18, 17, 18]
 		}
 	}, {
 		"name": "Lesson 6",
