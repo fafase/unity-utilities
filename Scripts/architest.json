@@ -2,22 +2,34 @@
 	"company": {
 		"name": "Softability Group Oy",
 		"web": "http://www.softability.fi/",
+		"address": {
+			"street": "Jaakonkatu 2",
+			"postcode": "01620",
+			"city": "Vantaa",
+			"country": "Finland"
+		},
+		"contact_person": [{
+			"name": "Lucas Cosson",
+			"phone": "+358 4123456789",
+			"title": "Software developer",
+			"email": "lucas.cosson@softability.fi",
 			"address": {
 				"street": "Jaakonkatu 2",
 				"postcode": "01620",
 				"city": "Vantaa",
 				"country": "Finland"
-			},
-		"contact_person": [{
-			"name": "Lucas Cosson",
-			"phone": "+358 4123456789",
-			"title": "Software developer",
-			"email": "lucas.cosson@softability.fi"
+			}
 		}, {
 			"name": "Anssi Seppä",
 			"phone": "+358 123456789",
 			"title": "Software developer",
-			"email": "anssi.seppa@softability.fi"
+			"email": "anssi.seppa@softability.fi",
+			"address": {
+				"street": "Jaakonkatu 2",
+				"postcode": "01620",
+				"city": "Vantaa",
+				"country": "Finland"
+			}
 		}]
 	},
 	"project": {
