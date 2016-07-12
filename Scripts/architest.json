@@ -272,6 +272,32 @@
 			}]
 		}]
 
+	}, {
+		"unit": [{
+			"guid": 102005001,
+			"available_date": 1468223295,
+			"available": true,
+			"price_local": 120000,
+			"currency": "EUR"
+		}, {
+			"guid": 102005002,
+			"available_date": 1468223295,
+			"available": false,
+			"price_local": 120000,
+			"currency": "EUR"
+		}, {
+			"guid": 102005003,
+			"available_date": 1468223295,
+			"available": false,
+			"price_local": 120000,
+			"currency": "EUR"
+		}, {
+			"guid": 102005004,
+			"available_date": 1468223295,
+			"available": true,
+			"price_local": 90000,
+			"currency": "EUR"
+		}]
 	}]
 
 }
