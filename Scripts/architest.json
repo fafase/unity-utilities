@@ -42,6 +42,7 @@
 
 	"building": [{
 		"name": "Tower 1",
+		"id":0,
 		"address": {
 			"street": "Jaakonkatu 2",
 			"postcode": "01620",
@@ -158,6 +159,7 @@
 
 	}, {
 		"name": "Tower 2",
+		"id":1,
 		"address": {
 			"street": "Jaakonkatu 2",
 			"postcode": "01620",
