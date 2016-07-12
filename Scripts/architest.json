@@ -39,7 +39,6 @@
 		"guid": 100001
 	},
 
-
 	"building": [{
 		"guid": 100001,
 		"name": "Tower 1",
@@ -51,73 +50,222 @@
 		},
 		"delivery": 1468223295,
 		"last_update": 1468223295,
-		"unit": [{
-			"guid": 101001,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+		"floor": [{
+			"unit": [{
+				"guid": 101001001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101002,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101002001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 1001003,
-			"available_date": 1468223295,
-			"available": false,
-			"price_local": 120000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101003001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003004,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101004,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 90000,
-			"currency": "EUR"
-		}, {
-			"guid": 101005,
-			"available_date": 1468223295,
-			"available": false,
-			"price_local": 150000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101004001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004002,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}]
+
 	}, {
 		"guid": 100002,
 		"name": "Tower 2",
 		"address": "Jaakonkatu 2, 01620 Vantaa, Finland",
 		"delivery": 1468223295,
 		"last_update": 1468223295,
-		"unit": [{
-			"guid": 101001,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+		"floor": [{
+			"unit": [{
+				"guid": 101001001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001003,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001004,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101002,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101002001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002003,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101003,
-			"available_date": 1468223295,
-			"available": false,
-			"price_local": 120000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101003001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003002,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101004,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 90000,
-			"currency": "EUR"
-		}, {
-			"guid": 101005,
-			"available_date": 1468223295,
-			"available": false,
-			"price_local": 150000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101004001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}]
 	}, {
 		"guid": 100003,
@@ -125,36 +273,110 @@
 		"address": "Jaakonkatu 2, 01620 Vantaa, Finland",
 		"delivery": 1468223295,
 		"last_update": 1468223295,
-		"unit": [{
-			"guid": 101001,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+		"floor": [{
+			"unit": [{
+				"guid": 101001001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101002,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101002001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101003,
-			"available_date": 1468223295,
-			"available": true,
-			"price_local": 120000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101003001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}, {
-			"guid": 101004,
-			"available_date": 1468223295,
-			"available": false,
-			"price_local": 90000,
-			"currency": "EUR"
-		}, {
-			"guid": 101005,
-			"available_date": 1468223295,
-			"available": false,
-			"price_local": 150000,
-			"currency": "EUR"
+			"unit": [{
+				"guid": 101004001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
 		}]
 	}]
 
