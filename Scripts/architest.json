@@ -33,6 +33,7 @@
 		}]
 	},
 	"project": {
+		"nomination":"Super Tower",
 		"timestamp_creation": 1468223295,
 		"timestamp_update": 1468223295,
 		"version": "0.1",
@@ -40,7 +41,6 @@
 	},
 
 	"building": [{
-		"guid": 100001,
 		"name": "Tower 1",
 		"address": {
 			"street": "Jaakonkatu 2",
