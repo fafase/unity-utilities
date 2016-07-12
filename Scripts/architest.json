@@ -157,7 +157,7 @@
 		}]
 
 	}, {
-		"name": "Tower 1",
+		"name": "Tower 2",
 		"address": {
 			"street": "Jaakonkatu 2",
 			"postcode": "01620",
@@ -168,25 +168,25 @@
 		"last_update": 1468223295,
 		"floor": [{
 			"unit": [{
-				"guid": 101001001,
-				"available_date": 1468223295,
-				"available": true,
-				"price_local": 120000,
-				"currency": "EUR"
-			}, {
-				"guid": 101001002,
-				"available_date": 1468223295,
-				"available": true,
-				"price_local": 120000,
-				"currency": "EUR"
-			}, {
-				"guid": 101001003,
+				"guid": 102001001,
 				"available_date": 1468223295,
 				"available": false,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101001004,
+				"guid": 102001002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102001003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102001004,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 90000,
@@ -194,25 +194,25 @@
 			}]
 		}, {
 			"unit": [{
-				"guid": 101002001,
+				"guid": 102002001,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101002002,
-				"available_date": 1468223295,
-				"available": true,
-				"price_local": 120000,
-				"currency": "EUR"
-			}, {
-				"guid": 101002003,
+				"guid": 102002002,
 				"available_date": 1468223295,
 				"available": false,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101002004,
+				"guid": 102002003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102002004,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 90000,
@@ -220,19 +220,19 @@
 			}]
 		}, {
 			"unit": [{
-				"guid": 101003001,
+				"guid": 1012003001,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101003002,
+				"guid": 102003002,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101003003,
+				"guid": 102003003,
 				"available_date": 1468223295,
 				"available": false,
 				"price_local": 120000,
@@ -246,28 +246,78 @@
 			}]
 		}, {
 			"unit": [{
-				"guid": 101004001,
+				"guid": 102004001,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102004002,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101004002,
+				"guid": 102004003,
 				"available_date": 1468223295,
 				"available": false,
 				"price_local": 120000,
 				"currency": "EUR"
 			}, {
-				"guid": 101004003,
-				"available_date": 1468223295,
-				"available": false,
-				"price_local": 120000,
-				"currency": "EUR"
-			}, {
-				"guid": 101004004,
+				"guid": 102004004,
 				"available_date": 1468223295,
 				"available": true,
 				"price_local": 90000,
+				"currency": "EUR"
+			}, {
+			"unit": [{
+				"guid": 102005001,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102005002,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102005003,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102005004,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 90000,
+				"currency": "EUR"
+			}, {
+			"unit": [{
+				"guid": 102006001,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102006002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 102006003,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 150000,
+				"currency": "EUR"
+			}, {
+				"guid": 102006004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 150000,
 				"currency": "EUR"
 			}]
 		}]
