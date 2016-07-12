@@ -33,7 +33,7 @@
 		}]
 	},
 	"project": {
-		"nomination":"Super Tower",
+		"nomination": "Super Tower",
 		"timestamp_creation": 1468223295,
 		"timestamp_update": 1468223295,
 		"version": "0.1",
@@ -41,6 +41,122 @@
 	},
 
 	"building": [{
+		"name": "Tower 1",
+		"address": {
+			"street": "Jaakonkatu 2",
+			"postcode": "01620",
+			"city": "Vantaa",
+			"country": "Finland"
+		},
+		"delivery": 1468223295,
+		"last_update": 1468223295,
+		"floor": [{
+			"unit": [{
+				"guid": 101001001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101001004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
+		}, {
+			"unit": [{
+				"guid": 101002001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101002004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
+		}, {
+			"unit": [{
+				"guid": 101003001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003002,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101003004,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
+		}, {
+			"unit": [{
+				"guid": 101004001,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004002,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004003,
+				"available_date": 1468223295,
+				"available": false,
+				"price_local": 120000,
+				"currency": "EUR"
+			}, {
+				"guid": 101004004,
+				"available_date": 1468223295,
+				"available": true,
+				"price_local": 90000,
+				"currency": "EUR"
+			}]
+		}]
+
+	}, {
 		"name": "Tower 1",
 		"address": {
 			"street": "Jaakonkatu 2",
