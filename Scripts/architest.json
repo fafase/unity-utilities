@@ -50,14 +50,14 @@
               "guid": 101001001,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 120000,
+              "price_local": 110000,
               "currency": "EUR"
             },
             {
               "guid": 101001002,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 120000,
+              "price_local": 11000,
               "currency": "EUR"
             },
             {
@@ -71,7 +71,7 @@
               "guid": 101001004,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 90000,
+              "price_local": 120000,
               "currency": "EUR"
             }
           ]
@@ -81,29 +81,29 @@
             {
               "guid": 101002001,
               "available_date": 1468223295,
-              "available": true,
-              "price_local": 120000,
+              "available": false,
+              "price_local": 125000,
               "currency": "EUR"
             },
             {
               "guid": 101002002,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 120000,
+              "price_local": 125000,
               "currency": "EUR"
             },
             {
               "guid": 101002003,
               "available_date": 1468223295,
               "available": false,
-              "price_local": 120000,
+              "price_local": 130000,
               "currency": "EUR"
             },
             {
               "guid": 101002004,
               "available_date": 1468223295,
-              "available": true,
-              "price_local": 90000,
+              "available": false,
+              "price_local": 130000,
               "currency": "EUR"
             }
           ]
@@ -114,28 +114,28 @@
               "guid": 101003001,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 120000,
+              "price_local": 135000,
               "currency": "EUR"
             },
             {
               "guid": 101003002,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 120000,
+              "price_local": 135000,
               "currency": "EUR"
             },
             {
               "guid": 101003003,
               "available_date": 1468223295,
-              "available": false,
-              "price_local": 120000,
+              "available": true,
+              "price_local": 140000,
               "currency": "EUR"
             },
             {
               "guid": 101003004,
               "available_date": 1468223295,
               "available": false,
-              "price_local": 90000,
+              "price_local": 140000,
               "currency": "EUR"
             }
           ]
@@ -146,28 +146,28 @@
               "guid": 101004001,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 120000,
+              "price_local": 145000,
               "currency": "EUR"
             },
             {
               "guid": 101004002,
               "available_date": 1468223295,
-              "available": false,
-              "price_local": 120000,
+              "available": true,
+              "price_local": 145000,
               "currency": "EUR"
             },
             {
               "guid": 101004003,
               "available_date": 1468223295,
               "available": false,
-              "price_local": 120000,
+              "price_local": 150000,
               "currency": "EUR"
             },
             {
               "guid": 101004004,
               "available_date": 1468223295,
               "available": true,
-              "price_local": 90000,
+              "price_local": 150000,
               "currency": "EUR"
             }
           ]
